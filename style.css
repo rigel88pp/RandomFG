@@ -141,9 +141,6 @@ h2 {
     color: #000;
 }
 
-
-/* 競技モード */
-
 #settingsForm.competitive input[type="checkbox"]:checked+label.unit-label {
     background-color: #ffb5b5;
     /* 赤 */
@@ -216,7 +213,7 @@ footer {
     color: #2c3e50;
     font-size: 18px;
     font-weight: bold;
-    padding: 8px 16px;
+    padding: 8px 100px;
     display: inline-block;
     transition: background-color 0.3s;
 }
@@ -224,4 +221,19 @@ footer {
 .footer-link:hover {
     background-color: #d0d0d0;
     border-radius: 6px;
+}
+
+.note {
+    background: #e8e8e8;
+    padding: 10px 14px;
+    border-left: 4px solid #888;
+    margin: 16px 0;
+}
+
+.warn {
+    background: #fff0f0;
+    padding: 10px 14px;
+    border-left: 4px solid #e55;
+    margin: 16px 0;
+    margin-bottom: 100px;
 }
