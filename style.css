@@ -1,0 +1,227 @@
+body {
+    width: 100%;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    border-bottom: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(20px, 4vw, 40px);
+    color: #2c3e50;
+}
+
+.maincontent {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btnShow {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: clamp(10px, 2vw, 24px) clamp(25px, 5vw, 60px);
+    background-color: #3498db;
+    color: white;
+    border: solid 2px #2980b9;
+    border-radius: 8px;
+    font-size: clamp(10px, 3vw, 25px);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#output {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 40px;
+    text-align: center;
+    background-color: #d2ebff;
+    border: 2px solid #333;
+    border-radius: 20px;
+    white-space: nowrap;
+    overflow-x: auto;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#btnStop {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: clamp(10px, 2vw, 24px) clamp(25px, 5vw, 60px);
+    background-color: #3498db;
+    color: white;
+    border: solid 2px #2980b9;
+    border-radius: 8px;
+    font-size: clamp(10px, 3vw, 25px);
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.unit-title {
+    font-size: clamp(20px, 6vw, 50px);
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.question-main {
+    font-size: clamp(30px, 8vw, 60px);
+    font-weight: bold;
+    color: #000;
+}
+
+.error-message {
+    font-size: clamp(30px, 6vw, 50px);
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.result {
+    font-size: clamp(20px, 6vw, 50px);
+    color: #000;
+    background-color: #a6dbff;
+    border-color: #3caffc;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: clamp(18px, 3vw, 30px);
+}
+
+#settingsForm {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 10px;
+    justify-content: start;
+    margin: 20px auto;
+}
+
+#settingsForm input[type="checkbox"] {
+    display: none;
+}
+
+#settingsForm label.unit-label {
+    display: block;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #eee;
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: bold;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+}
+
+#settingsForm input[type="checkbox"]:checked+label.unit-label {
+    background-color: #b5e2ff;
+    color: #000;
+}
+
+#settingsForm.normal input[type="checkbox"]:checked+label.unit-label {
+    background-color: #b5e2ff;
+    /* 水色 */
+    color: #000;
+}
+
+
+/* 競技モード */
+
+#settingsForm.competitive input[type="checkbox"]:checked+label.unit-label {
+    background-color: #ffb5b5;
+    /* 赤 */
+    color: #000;
+}
+
+#settingsForm.competitive input[type="checkbox"]:not(:checked)+label.unit-label {
+    background-color: #ddd;
+    /* 灰色 */
+    color: #666;
+}
+
+.unit-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(24px, 3vw, 36px);
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    padding: 30px;
+    cursor: pointer;
+}
+
+#btnAllSelect {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    padding: clamp(8px, 2vw, 18px) clamp(20px, 4vw, 50px);
+    background-color: #3498db;
+    color: white;
+    border: solid 2px #2980b9;
+    border-radius: 8px;
+    font-size: clamp(10px, 3vw, 20px);
+    cursor: pointer;
+}
+
+#btnModeToggle {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    padding: clamp(8px, 2vw, 18px) clamp(20px, 4vw, 50px);
+    background-color: #ddd;
+    color: #000;
+    border: solid 2px #eee;
+    border-radius: 8px;
+    font-size: clamp(10px, 3vw, 20px);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    white-space: nowrap;
+}
+
+#btnModeToggle.on {
+    background-color: #ff4a4a;
+    /* ON 色 */
+    border-color: #ff2b2b;
+    color: white;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #e0e0e0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 2px solid #aaa;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.footer-link:hover {
+    background-color: #d0d0d0;
+    border-radius: 6px;
+}
